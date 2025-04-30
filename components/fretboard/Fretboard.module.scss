@@ -1,0 +1,81 @@
+.fretboardContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  .fretboard {
+    width: 98%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border-right: 0;
+    border-left: 0;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 20px;
+
+    .string {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      position: relative;
+      &:nth-of-type(1):before {
+        background-color: gray;
+        height: 1.5px;
+      }
+      &:nth-of-type(2):before {
+        background-color: gray;
+        height: 2.4px;
+      }
+      &:nth-of-type(3):before {
+        background-color: gray;
+        height: 2.5px;
+      }
+      &:nth-of-type(4):before {
+        background-color: darkgray;
+        height: 2.75px;
+      }
+      &:nth-of-type(5):before {
+        background-color: darkgray;
+        height: 3px;
+      }
+      &:nth-of-type(6):before {
+        background-color: darkgray;
+        height: 3.25px;
+      }
+      &:before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 15px;
+        height: 1px;
+      }
+    }
+
+    .fret {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+      height: 35px;
+      border-right: 2px solid gray;
+      &:nth-child(1) {
+        max-width: 75px;
+        min-width: 75px;
+      }
+
+      .note {
+        all: unset;
+        background-color: #2f89fc;
+        color: white;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
