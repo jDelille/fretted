@@ -1,7 +1,7 @@
 .fretboardContainer {
-    height: 100vh;
-    display: flex;
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   .fretboard {
     width: 98%;
     overflow-x: hidden;
@@ -68,14 +68,46 @@
         min-width: 75px;
       }
 
-      .note {
+      .note,
+      .inactiveNote,
+      .rootNote,
+      .triadNote,
+      .powerChordNote {
         all: unset;
+        width: 26px;
+        height: 26px;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 12px;
+        position: relative;
+        z-index: 999;
+        cursor: pointer;
+        position: relative;
+        bottom: 1px;
+        color: white;
+        background-color: white;
+        color: gray;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+
+      .rootNote {
         background-color: #2f89fc;
         color: white;
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
       }
+
+      .triadNote {
+        background-color: #e94e3d;
+        color: white;
+      }
+
+   
+
     }
   }
 }
