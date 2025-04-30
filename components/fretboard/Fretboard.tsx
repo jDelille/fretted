@@ -9,6 +9,7 @@ import { Scale, Interval } from "tonal";
 import { Scales } from "@/constants/scales";
 import { instrument, InstrumentName } from 'soundfont-player';
 import FretNumbers from "../fret-numbers/FretNumbers";
+import { observer } from "mobx-react-lite";
 
 type FretboardProps = {};
 
@@ -108,4 +109,4 @@ const Fretboard: React.FC<FretboardProps> = () => {
   );
 };
 
-export default Fretboard;
+export default observer(Fretboard);

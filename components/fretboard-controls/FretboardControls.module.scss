@@ -1,0 +1,35 @@
+@use '../../scss/breakpoints.scss' as *;
+
+
+.fretboardControlsContainer {
+    width: 100%;
+    border-bottom: 1px solid  #EBEEF4;
+    padding: 0 352.5px;
+    margin-bottom: 3rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    
+    @include smallLaptop() {
+        padding: 1rem 2rem;
+    }
+    .controls {
+        height: 100%;
+        display: flex;
+        gap: 10px;
+        .keys {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 500;
+            height: 100%;
+            p {
+                border-right: 1px solid #adaeaf;
+                cursor: pointer;
+                padding-right: 10px;
+                margin-right: 10px;
+
+            }
+        }
+    }
+}

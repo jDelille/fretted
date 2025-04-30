@@ -1,11 +1,15 @@
+@use '../../scss/breakpoints.scss' as *;
+
 .navbar {
     height: 65px;
-    border-bottom: 1px solid  #EBEEF4;
+    border-bottom: 1px solid #EBEEF4;
     width: 100vw;
     padding: 1rem 352.5px;
     display: flex;
     align-items: center;
-
+    @include smallLaptop() {
+        padding: 1rem 2rem;
+    }
     .logo {
         font-weight: 500;
         font-size: 20px;

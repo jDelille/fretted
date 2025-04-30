@@ -1,9 +1,14 @@
+@use '../../scss/breakpoints.scss' as break;
+
 .fretNumbers {
     display: flex;
     align-items: center;
     width: 98%;
     margin: 0 auto;
     position: relative;
+    @include break.smallLaptop() {
+      min-width: 1600px;
+  }
     .fretNumber {
         flex: 1;
         display: flex;

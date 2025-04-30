@@ -245,4 +245,7 @@ export const Notes = Object.freeze({
     //   tuning: [8, 3, 8, 3, 8, 12],
     // },
   ],
+  keys: [
+    "A", "B", "C", "D", "E", "F", "G"
+  ]
 });
