@@ -12,6 +12,7 @@ class FretboardStore {
   isTriadVisible: boolean;
   isRootNoteVisible: boolean;
   isPowerChordVisible: boolean;
+  sound: string;
 
   constructor() {
     makeAutoObservable(this);
@@ -25,6 +26,8 @@ class FretboardStore {
     this.isTriadVisible = true;
     this.isRootNoteVisible = true;
     this.isPowerChordVisible = false;
+    this.sound = 'acoustic_guitar_nylon';
+
   }
 
   setRootNote = (note: string) => {

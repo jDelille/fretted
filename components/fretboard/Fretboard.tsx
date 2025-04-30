@@ -7,6 +7,7 @@ import fretboardStore from "@/store/fretboardStore";
 import { Notes } from "@/constants/notes";
 import { Scale, Interval } from "tonal";
 import { Scales } from "@/constants/scales";
+import { instrument, InstrumentName } from 'soundfont-player';
 
 type FretboardProps = {};
 
@@ -21,6 +22,7 @@ const Fretboard: React.FC<FretboardProps> = () => {
     isRootNoteVisible,
     isTriadVisible,
     isPowerChordVisible,
+    sound
   } = fretboardStore;
   const { tunings } = Notes;
 
@@ -34,9 +36,14 @@ const Fretboard: React.FC<FretboardProps> = () => {
     synthRef.current = new Tone.Synth().toDestination();
   }, []);
 
-  const playNote = () => {
-    synthRef.current?.triggerAttackRelease("C4", "8n");
-  };
+  function playNote(note: string, fret: number, string: number) {
+    const octave = Math.floor(fret / 12) + 4 - (string - 2);
+    instrument(new AudioContext(), sound as InstrumentName).then(
+      (guitar) => {
+        guitar.play(note + octave);
+      }
+    );
+  }
 
   const triadNotes = [1, 3, 5].map(Scale.degrees(`${rootNote} ${scale}`));
   const powerChordNotes = [1, 5].map(Scale.degrees(`${rootNote} ${scale}`));
@@ -74,14 +81,14 @@ const Fretboard: React.FC<FretboardProps> = () => {
             const scalePosition = position - 1;
 
             return (
-              <div className={styles.fret}>
+              <div className={styles.fret} key={fret + 1}>
                 <button
                   className={getNoteClassName(
                     noteName,
                     Scale.get(scaleName).notes.includes(noteName)
                   )}
-                  onClick={playNote}
-                  key={fret + 1}
+                  onClick={() => playNote(notes[noteIndex], fret, string)}
+                  
                 >
                   {notes[noteIndex]}
                 </button>

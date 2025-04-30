@@ -16,6 +16,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.87.0",
+    "soundfont-player": "^0.12.0",
     "tonal": "^6.4.1",
     "tone": "^15.1.22",
     "zustand": "^5.0.3"
