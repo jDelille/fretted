@@ -8,6 +8,7 @@ import { Notes } from "@/constants/notes";
 import { Scale, Interval } from "tonal";
 import { Scales } from "@/constants/scales";
 import { instrument, InstrumentName } from 'soundfont-player';
+import FretNumbers from "../fret-numbers/FretNumbers";
 
 type FretboardProps = {};
 
@@ -68,6 +69,7 @@ const Fretboard: React.FC<FretboardProps> = () => {
 
   return (
     <div className={styles.fretboardContainer}>
+      <FretNumbers />
       <div className={styles.fretboard}>
         {Array.from({ length: numberOfStrings }, (_, string) => {
           const frets = Array.from({ length: numberOfFrets }, (_, fret) => {

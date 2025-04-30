@@ -1,0 +1,27 @@
+.fretNumbers {
+    display: flex;
+    align-items: center;
+    width: 98%;
+    margin: 0 auto;
+    position: relative;
+    .fretNumber {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #808080;
+        font-weight: 600;
+        font-size: 14px;
+        gap: 5px;
+        position: relative;
+        left: -7px;
+        &:nth-of-type(1) {
+          max-width: 75px;
+          min-width: 75px;
+          position: relative;
+          left: 0px;
+          margin-right: 7px;
+        }
+    }
+}
